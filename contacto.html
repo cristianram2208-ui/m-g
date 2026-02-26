@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con MyG Inmobiliaria en Zaragoza. Estamos en Paseo Teruel 40. Teléfono: 976 53 52 26.">
+    <title>Contacto | M&G Inmobiliaria</title>
+    <link rel="stylesheet" href="css/styleContacto.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
+                <span id="logo-texto" style="display: none;">M&G<span> Inmobiliaria</span></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+                
+                <li class="dropdown">
+                    <a href="servicios.html" onclick="toggleDropdown(event)">
+                        Servicios 
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
+                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
+                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="contacto.html" class="active" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. ¿Hablamos?</p>
+        </section>
+
+        <section class="contacto-info">
+            <div class="contacto-grid">
+                <article class="contacto-card animate-on-scroll">
+                    <h3>Visítanos</h3>
+                    <p>
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer">
+                            Paseo Teruel 40<br>
+                            50006 Zaragoza
+                        </a>
+                    </p>
+                </article>
+                
+                <article class="contacto-card animate-on-scroll">
+                    <h3>Llámanos</h3>
+                    <p>
+                        <a href="tel:+34976535226">976 53 52 26</a><br>
+                        <small>Lunes a Viernes</small>
+                    </p>
+                </article>
+                
+                <article class="contacto-card animate-on-scroll">
+                    <h3>Escríbenos</h3>
+                    <p>
+                        <a href="mailto:info@inmobiliariamyg.com">info@inmobiliariamyg.com</a><br>
+                        <small>Te respondemos en 24h</small>
+                    </p>
+                </article>
+                
+                <article class="contacto-card animate-on-scroll">
+                    <h3>WhatsApp</h3>
+                    <p>
+                        <a href="https://wa.me/34976535226?text=Hola,%20me%20interesa%20una%20propiedad" target="_blank" rel="noopener noreferrer">
+                            687 94 76 09
+                        </a><br>
+                        <small>Respuesta en 24h</small>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contacto-formulario">
+            <div class="formulario-container">
+                <div class="formulario">
+                    <h2>Envíanos un mensaje</h2>
+                    <p>Completa el formulario y te respondemos en menos de 24 horas.</p>
+                    
+                    <form id="contactoForm" action="https://formsubmit.co/info@inmobiliariamyg.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nuevo lead - MyG Inmobiliaria">
+                        <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Te respondemos en menos de 24 horas. Un saludo, MyG Inmobiliaria">
+                        <input type="hidden" name="_next" value="https://tupagina.com/gracias.html">
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="Nombre" required placeholder="Tu nombre">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="Email" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="Teléfono" placeholder="600 12 34 56">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servicio">¿Qué necesitas? *</label>
+                            <select id="servicio" name="Servicio" required>
+                                <option value="">Selecciona...</option>
+                                <option value="Vender">Quiero vender</option>
+                                <option value="Comprar">Quiero comprar</option>
+                                <option value="Alquiler">Gestión de alquiler</option>
+                                <option value="Tasación">Necesito tasación</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="Mensaje" required placeholder="Cuéntanos los detalles..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.5!2d-0.8891!3d41.6488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914df7e21e3e5%3A0x0!2sPaseo+de+Teruel%2C+40%2C+50004+Zaragoza!5e0!3m2!1ses!2ses!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de MyG Inmobiliaria">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="horario">
+            <div class="horario-container">
+                <h2>Horario de atención</h2>
+                <p>Estamos disponibles para atenderte en nuestras oficinas</p>
+                
+                <div class="horario-grid">
+                    <article class="horario-item animate-on-scroll">
+                        <h3>Lunes - Viernes</h3>
+                        <p>Mañanas: 10:00 - 13:30<br>
+                        Tardes: 17:00 - 20:00</p>
+                    </article>
+                    <article class="horario-item animate-on-scroll">
+                        <h3>Sábados</h3>
+                        <p>10:00 - 13:00</p>
+                    </article>
+                    <article class="horario-item animate-on-scroll">
+                        <h3>Urgencias</h3>
+                        <p>WhatsApp <br>
+                        Para clientes</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <h2>¿Prefieres que te llamemos nosotros?</h2>
+            <p>Déjanos tu teléfono y te contactamos gratis.</p>
+            <a href="tel:+34976535226" class="cta-button">Llamar ahora</a>
+            <a href="https://wa.me/34976535226?text=Hola,%20llámame%20cuando%20puedas" class="cta-button secondary">WhatsApp</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>M&G Inmobiliaria</h3>
+                <p>La forma más personal de hacer inmobiliaria. Transformando viviendas en historias de vida desde 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer"> Paseo Teruel 40, Zaragoza</a></p>
+                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
+                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+                <p><a href="footer/cookies.html">Cookies</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./JavaScript/common.js"></script>
+    <script src="JavaScript/contacto.js"></script>
+    
+</body>
+</html>

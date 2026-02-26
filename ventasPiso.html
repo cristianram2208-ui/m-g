@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vende tu propiedad en Zaragoza con MyG Inmobiliaria. Valoración gratuita y profesional.">
+    <title>Venta de Propiedades | M&G Inmobiliaria</title>
+    <link rel="stylesheet" href="css/styleVentas.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
+                <span id="logo-texto" style="display: none;">M&G<span> Inmobiliaria</span></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+                
+                <li class="dropdown">
+                    <a href="servicios.html" class="active" onclick="toggleDropdown(event)">
+                        Servicios 
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
+                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
+                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header">
+            <h1>Venta de Propiedades</h1>
+            <p>Vende tu inmueble con los mejores profesionales de Zaragoza</p>
+        </section>
+
+        <section class="intro-section">
+            <h2>¿Quieres vender tu propiedad?</h2>
+            <p>Completa el siguiente formulario con las características de tu inmueble y nos pondremos en contacto contigo en menos de 24 horas para ofrecerte una valoración gratuita y sin compromiso.</p>
+        </section>
+
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Formulario de Valoración</h2>
+                <p class="form-subtitle">Cuéntanos sobre tu propiedad</p>
+                
+                <form id="propertyForm" action="https://formsubmit.co/aplicaciones.bpp@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva solicitud de VALORACIÓN - MyG Inmobiliaria">
+                    <input type="hidden" name="_next" value="https://inmobiliariamyg.webcindario.com/gracias.html">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <div class="success-message" id="successMsg">
+                        ¡Gracias! Hemos recibido tu información. Te contactaremos pronto.
+                    </div>
+                    
+                    <div class="error-message" id="errorMsg">
+                        Ha ocurrido un error. Por favor, inténtalo de nuevo.
+                    </div>
+
+                    <div class="form-grid">
+                        <!-- Datos de contacto -->
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo <span>*</span></label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan García">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono <span>*</span></label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 612 345 678">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="Ej: juan@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferencia_contacto">¿Cómo prefieres que te contactemos?</label>
+                            <select id="preferencia_contacto" name="preferencia_contacto">
+                                <option value="telefono">Teléfono</option>
+                                <option value="email">Email</option>
+                                <option value="whatsapp">WhatsApp</option>
+                            </select>
+                        </div>
+
+                        <!-- Datos de la propiedad -->
+                        <div class="form-group">
+                            <label for="tipo_propiedad">Tipo de propiedad <span>*</span></label>
+                            <select id="tipo_propiedad" name="tipo_propiedad" required>
+                                <option value="">Selecciona...</option>
+                                <option value="piso">Piso</option>
+                                <option value="casa">Casa/Chalet</option>
+                                <option value="atico">Ático</option>
+                                <option value="duplex">Dúplex</option>
+                                <option value="estudio">Estudio</option>
+                                <option value="local">Local Comercial</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección completa <span>*</span></label>
+                            <input type="text" id="direccion" name="direccion" required placeholder="Ej: Calle Aragón 123, 2ºB">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="codigo_postal">Código Postal <span>*</span></label>
+                            <input type="text" id="codigo_postal" name="codigo_postal" required placeholder="Ej: 50001">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zona">Zona/Barrio</label>
+                            <input type="text" id="zona" name="zona" placeholder="Ej: Centro, Delicias, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="metros_construidos">Superficie construida (m²) <span>*</span></label>
+                            <input type="number" id="metros_construidos" name="metros_construidos" required placeholder="Ej: 85">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="metros_utiles">Superficie útil (m²)</label>
+                            <input type="number" id="metros_utiles" name="metros_utiles" placeholder="Ej: 75">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="habitaciones">Habitaciones <span>*</span></label>
+                            <select id="habitaciones" name="habitaciones" required>
+                                <option value="">Selecciona...</option>
+                                <option value="0">0 (Estudio)</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5 o más</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="banos">Baños <span>*</span></label>
+                            <select id="banos" name="banos" required>
+                                <option value="">Selecciona...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4+">4 o más</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="planta">Planta</label>
+                            <select id="planta" name="planta">
+                                <option value="">Selecciona...</option>
+                                <option value="bajo">Bajo</option>
+                                <option value="entresuelo">Entresuelo</option>
+                                <option value="1">1ª</option>
+                                <option value="2">2ª</option>
+                                <option value="3">3ª</option>
+                                <option value="4">4ª</option>
+                                <option value="5+">5ª o superior</option>
+                                <option value="atico">Ático</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ascensor">¿Tiene ascensor?</label>
+                            <select id="ascensor" name="ascensor">
+                                <option value="">Selecciona...</option>
+                                <option value="si">Sí</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ano_construccion">Año de construcción</label>
+                            <input type="number" id="ano_construccion" name="ano_construccion" placeholder="Ej: 2005" min="1900" max="2026">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado general <span>*</span></label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Selecciona...</option>
+                                <option value="nuevo">A estrenar</option>
+                                <option value="excelente">Excelente estado</option>
+                                <option value="bueno">Buen estado</option>
+                                <option value="reformar">Necesita reforma</option>
+                                <option value="ruina">Para rehabilitar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio_esperado">Precio esperado (€) <span>*</span></label>
+                            <input type="number" id="precio_esperado" name="precio_esperado" required placeholder="Ej: 150000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motivo_venta">¿Por qué vendes?</label>
+                            <select id="motivo_venta" name="motivo_venta">
+                                <option value="">Selecciona...</option>
+                                <option value="cambio">Cambio de vivienda</option>
+                                <option value="herencia">Herencia</option>
+                                <option value="inversion">Inversión</option>
+                                <option value="divorcio">Divorcio/Separación</option>
+                                <option value="economico">Motivos económicos</option>
+                                <option value="trabajo">Traslado laboral</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="extras">Extras y características adicionales</label>
+                            <input type="text" id="extras" name="extras" placeholder="Ej: Terraza, garaje, trastero, piscina, aire acondicionado, calefacción...">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="descripcion">Descripción adicional</label>
+                            <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos cualquier detalle importante sobre la propiedad, el edificio, la zona, etc."></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para la gestión de la valoración inmobiliaria. <span>*</span></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="marketing" name="marketing">
+                                <label for="marketing">Acepto recibir información comercial sobre productos y servicios inmobiliarios (opcional).</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Enviar solicitud de valoración</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="info-cards">
+            <div class="info-container">
+                <h2>¿Por qué vender con nosotros?</h2>
+                <div class="cards-grid">
+                    <article class="info-card animate-on-scroll">
+                        <h3>Mejor precio</h3>
+                        <p>Valoración realista basada en el mercado actual de Zaragoza para maximizar tu venta.</p>
+                    </article>
+                    <article class="info-card animate-on-scroll">
+                        <h3>Rapidez</h3>
+                        <p>Promedio de 45 días en vender propiedades gestionadas por nuestro equipo.</p>
+                    </article>
+                    <article class="info-card animate-on-scroll">
+                        <h3>Marketing profesional</h3>
+                        <p>Fotografía profesional, tour virtual y publicación en los principales portales.</p>
+                    </article>
+                    <article class="info-card animate-on-scroll">
+                        <h3>Seguridad</h3>
+                        <p>Verificación de compradores y gestión integral del proceso hasta la firma.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>M&G Inmobiliaria</h3>
+                <p>La forma más personal de hacer inmobiliaria. Transformando viviendas en historias de vida desde 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer"> Paseo Teruel 40, Zaragoza</a></p>
+                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
+                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+                <p><a href="footer/cookies.html">Cookies</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./JavaScript/common.js"></script>
+    <script src="JavaScript/ventasPiso.js"></script>
+    
+</body>
+</html>

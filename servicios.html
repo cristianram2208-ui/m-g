@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios de MyG Inmobiliaria en Zaragoza: venta, compra y alquiler de propiedades con trato personalizado.">
+    <title>Servicios | M&G Inmobiliaria</title>
+    <link rel="stylesheet" href="css/styleServicios.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
+                <span id="logo-texto" style="display: none;">M&G<span> Inmobiliaria</span></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+                
+                <li class="dropdown">
+                    <a href="servicios.html" class="active" onclick="toggleDropdown(event)">
+                        Servicios 
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
+                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
+                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Nuestros Servicios</h1>
+            <p>Todo lo que necesitas para tu operación inmobiliaria en un solo lugar</p>
+        </section>
+
+        <!-- VENTA - FONDO BLANCO -->
+        <section class="servicio-detalle venta" id="venta">
+            <div class="servicio-container">
+                <div class="servicio-imagen animate-on-scroll">
+                    <img src="./fotos/ventaImagen.png" alt="Venta de propiedades" loading="lazy">
+                </div>
+                <div class="servicio-texto animate-on-scroll">
+                    <h2>
+                        <span>Servicio</span>
+                        Venta de Propiedades
+                    </h2>
+                    <p><strong>Vende tu inmueble al mejor precio y en el tiempo que necesitas.</strong> Te ayudamos en todo el proceso, desde la valoración inicial hasta la firma en notaría.</p>
+                    
+                    <ul class="servicio-lista">
+                        <li>Valoración gratuita y sin compromiso</li>
+                        <li>Fotografía profesional</li>
+                        <li>Publicación en los principales portales inmobiliarios</li>
+                        <li>Filtrado de compradores serios</li>
+                        <li>Gestión de visitas y negociación</li>
+                        <li>Asesoramiento legal y fiscal completo</li>
+                    </ul>
+                    
+                    <p>Con numerosas operaciones exitosas, conocemos el mercado de Zaragoza y sabemos cómo destacar tu propiedad.</p>
+                    
+                    <a href="ventasPiso.html" class="cta-button">Solicitar valoración gratuita</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPRA - FONDO AZUL -->
+        <section class="servicio-detalle compra" id="compra">
+            <div class="servicio-container">
+                <div class="servicio-imagen animate-on-scroll">
+                    <img src="./fotos/compraImagen.png" alt="Compra segura" loading="lazy">
+                </div>
+                <div class="servicio-texto animate-on-scroll">
+                    <h2>
+                        <span>Servicio</span>
+                        Compra Segura
+                    </h2>
+                    <p><strong>Encuentra la vivienda que se ajusta a ti.</strong><br> Te acompañamos en cada paso para que tomes la mejor decisión con total seguridad.</br></p>
+                    
+                    <ul class="servicio-lista">
+                        <li>Búsqueda personalizada según tus necesidades</li>
+                        <li>Visitas acompañadas</li>
+                        <li>Informe de estado técnico de la vivienda</li>
+                        <li>Negociación del precio para un mayor beneficio</li>
+                        <li>Verificación documental completa</li>
+                        <li>Te acompañamos hasta la entrega de llaves</li>
+                    </ul>
+                    
+                    <p>Nuestro objetivo es que compres con confianza, sabiendo en qué inviertes. Tu tranquilidad es nuestra prioridad.</p>
+                    
+                    <a href="compraPiso.html" class="cta-button">Encontrar mi vivienda</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALQUILER - FONDO BLANCO -->
+        <section class="servicio-detalle alquiler" id="alquiler">
+            <div class="servicio-container">
+                <div class="servicio-imagen animate-on-scroll">
+                    <img src="./fotos/alquilerImagen.png" alt="Gestión de alquileres" loading="lazy">
+                </div>
+                <div class="servicio-texto animate-on-scroll">
+                    <h2>
+                        <span>Servicio</span>
+                        Gestión de Alquileres
+                    </h2>
+                    <p><strong>Obtén el máximo rendimiento de tu propiedad sin complicaciones.</strong> Nos encargamos de todo y de que obtengas una rentabilidad real.</p>
+                    
+                    <ul class="servicio-lista">
+                        <li>Búsqueda y selección de inquilinos solventes</li>
+                        <li>Verificación de referencias y nóminas</li>
+                        <li>Contratos con todas las garantías legales</li>
+                        <li>Fianza y seguro de impago incluido</li>
+                        <li>Gestión de incidencias 24h</li>
+                        <li>Revisión periódica del estado del inmueble</li>
+                    </ul>
+                    
+                    <p>Ya seas propietario o inquilino, garantizamos un alquiler 100% seguro y sin sorpresas para ambas partes.</p>
+                    
+                    <a href="alquilerPiso.html" class="cta-button">Gestionar mi alquiler</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso -->
+        <section class="proceso">
+            <div class="proceso-container">
+                <h2>¿Cómo trabajamos?</h2>
+                <div class="proceso-pasos">
+                    <div class="paso animate-on-scroll">
+                        <div class="paso-numero">1</div>
+                        <h3>Primera visita</h3>
+                        <p>Conocemos tus necesidades y evaluamos tu caso</p>
+                    </div>
+                    <div class="paso animate-on-scroll">
+                        <div class="paso-numero">2</div>
+                        <h3>Propuesta</h3>
+                        <p>Te presentamos un plan a medida con presupuesto</p>
+                    </div>
+                    <div class="paso animate-on-scroll">
+                        <div class="paso-numero">3</div>
+                        <h3>Ejecución</h3>
+                        <p>Gestionamos todo mientras te mantenemos informado</p>
+                    </div>
+                    <div class="paso animate-on-scroll">
+                        <div class="paso-numero">4</div>
+                        <h3>Éxito</h3>
+                        <p>Operación completada y cliente satisfecho</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-final">
+            <h2>¿Tienes dudas sobre qué servicio necesitas?</h2>
+            <p>Contacta con nosotros, te asesoraremos sin compromiso. <br>Cada situación es única y merece una solución a medida.</br></p>
+            <a href="contacto.html" class="cta-button">Consultar ahora</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>M&G Inmobiliaria</h3>
+                <p>La forma más personal de hacer inmobiliaria. Transformando viviendas en historias de vida desde 1998.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer"> Paseo Teruel 40, Zaragoza</a></p>
+                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
+                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+                <p><a href="footer/cookies.html">Cookies</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./JavaScript/common.js"></script>
+    <script src="JavaScript/servicios.js"></script>
+    
+</body>
+</html>

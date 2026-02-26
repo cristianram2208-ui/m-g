@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="MyG Inmobiliaria - Tu inmobiliaria de confianza en Zaragoza. Venta, compra y alquiler de propiedades con trato personalizado." />
+    <title>M&G Inmobiliaria</title>
+    <link rel="stylesheet" href="./css/styleIndex.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./fotos/myg-logo.webp" alt="M&G Inmobiliaria" class="logo-img" onerror="
+              this.style.display = 'none';
+              document.getElementById('logo-texto').style.display = 'block';
+            " />
+                <span id="logo-texto" style="display: none">M&G<span> Inmobiliaria</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="index.html" class="active" onclick="closeMenu()">Inicio</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="servicios.html" onclick="toggleDropdown(event)">
+                        Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a>
+                        </li>
+                        <li>
+                            <a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a>
+                        </li>
+                        <li>
+                            <a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+
+            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>
+                    Tu aliado inmobiliaria en Zaragoza<br />Encuentra el Hogar Perfecto
+                </h1>
+                <p>
+                    Cada persona es diferente, cada hogar tambien. Por eso no vendemos
+                    pisos: escuchamos lo que necesitas y buscamos la mejor solucion para
+                    ti.
+                </p>
+                <a href="#servicios" class="cta-button">Descubre tu nuevo hogar</a>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Estamos aqui para lo que viene</h2>
+            <p>
+                Vender, comprar o alquilar un hogar no es solo un tramite. Es una
+                decision que merece tiempo, atención y alguien que entienda lo que
+                realmente necesitas.
+            </p>
+        </section>
+
+        <section class="services" id="servicios">
+            <div class="container">
+                <h2>Todo lo que necesita, en un solo lugar</h2>
+                <p>La gestión inmobiliaria requiere precisión...</p>
+
+                <div class="services-grid">
+                    <article class="service-card animate-on-scroll" onclick="location.href = 'ventasPiso.html'">
+                        <div class="service-image">
+                            <img src="./fotos/ventaImagen.png" alt="Venta" loading="lazy" />
+                        </div>
+                        <div class="service-content">
+                            <h3>Venta de Propiedades</h3>
+                            <p>Te ayudamos a vender tu inmueble...</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card animate-on-scroll" onclick="location.href = 'compraPiso.html'"
+                        style="cursor: pointer">
+                        <div class="service-image">
+                            <img src="./fotos/compraImagen.png" alt="Compra" loading="lazy" />
+                        </div>
+                        <div class="service-content">
+                            <h3>Compra Segura</h3>
+                            <p>Encontramos la vivienda que se adapta...</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card animate-on-scroll" onclick="location.href = 'alquilerPiso.html'"
+                        style="cursor: pointer">
+                        <div class="service-image">
+                            <img src="./fotos/alquilerImagen.png" alt="Gestión de alquileres" loading="lazy" />
+                        </div>
+                        <div class="service-content">
+                            <h3>Gestión de Alquileres</h3>
+                            <p>Administramos tu propiedad...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="nosotros">
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>Gestión Inmobiliaria Profesional</h2>
+                    <p>
+                        <strong>Avanza con confianza, nosotros te acompañamos.</strong>
+                    </p>
+                    <p>
+                        Las decisiones inmobiliarias marcan etapas. Por eso combinamos
+                        experiencia con una metodología clara: te escuchamos,
+                        simplificamos el proceso y actuamos como puente en la negociación.
+                    </p>
+                    <p>
+                        Estaremos a tu lado desde la primera conversación hasta cumplir
+                        con el objetivo de compra, venta o inversión.
+                    </p>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <img src="./fotos/trato-imagen.png" alt="Equipo de gestión inmobiliaria" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews" id="reseñas">
+            <div class="reviews-header">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="google-badge">
+                    <a href="https://www.google.com/search?sca_esv=2bbc76108a4ecd6f&sxsrf=ANbL-n5ltNSQkdNbX7Jc7gm9DpRq6qb9Bg:1771241279426&q=opiniones+de+m+%26+g+-inmobiliaria+%26+decoracion-&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-D8SbTwdJJzmwuf9SBaX0ICkFONgnrZu0JsfiEbPNrQWB2ldf1buKNPc3aOixTSap6PiDASkzxIkp7q80J1RfFIv_m_yTMJU5mdxGqhzp3wzOv5zVGJn8Z_HmAJp2hP5mP3j1Mq2n8DjVPF3WSbWnCk9VqLC2ci7HSjCoQbnF6MkY7GRK_Qj_VmvXgVsbz3Uigrci5g&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTCo-2S5UK1ii5hZFYO2BNbe2Q4PeBeDzdxr9TMFkT7PoRemp6NxXDuE-kL80S-hl98ygJwzZnr6Tt6PYBHPseoEdJylpruhkSbsE8GrRKs4SyfiFp9r2--VTYhx5DWt-JLJyc4%3D&sa=X&ved=2ahUKEwik95X6892SAxWJVKQEHYZMH7oQxKsJKAB6BAgsEAE&ictx=1&biw=1536&bih=730&dpr=1.25"
+                        target="_blank" rel="noopener noreferrer" class="badge-link"
+                        aria-label="Ver 28 reseñas en Google">
+                        <div class="badge-content">
+                            <img src="https://www.google.com/favicon.ico" alt="" class="google-icon"
+                                aria-hidden="true" />
+                            <div class="badge-text">
+                                <div class="rating-line">
+                                    <span class="rating-number">4.9</span>
+                                    <span class="stars" aria-hidden="true">★★★★★</span>
+                                    <span class="review-count">28 reseñas</span>
+                                </div>
+                                <span class="badge-label">Ver en Google</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="review-grid">
+                <article class="review-item animate-on-scroll">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=Maria+G&background=e67e22&color=fff&size=50" alt=""
+                            class="review-avatar" loading="lazy" aria-hidden="true" />
+                        <div class="review-meta">
+                            <span class="review-author">María G.</span>
+                            <span class="review-date">Hace 2 meses</span>
+                        </div>
+                        <img src="https://www.google.com/favicon.ico" alt="" class="google-logo-small"
+                            aria-hidden="true" />
+                    </div>
+                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                    <p class="review-text">
+                        "Excelente trato personalizado. Me ayudaron a encontrar mi piso
+                        ideal en tiempo récord. El proceso fue muy transparente y sin
+                        sorpresas. Totalmente recomendables."
+                    </p>
+                </article>
+
+                <article class="review-item animate-on-scroll">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=Carlos+R&background=34495e&color=fff&size=50" alt=""
+                            class="review-avatar" loading="lazy" aria-hidden="true" />
+                        <div class="review-meta">
+                            <span class="review-author">Carlos R.</span>
+                            <span class="review-date">Hace 3 meses</span>
+                        </div>
+                        <img src="https://www.google.com/favicon.ico" alt="" class="google-logo-small"
+                            aria-hidden="true" />
+                    </div>
+                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                    <p class="review-text">
+                        "Profesionales serios y comprometidos. Vendieron mi casa al precio
+                        esperado y en plazos razonables. La comunicación fue excelente
+                        durante todo el proceso."
+                    </p>
+                </article>
+
+                <article class="review-item animate-on-scroll">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=Ana+L&background=2c3e50&color=fff&size=50" alt=""
+                            class="review-avatar" loading="lazy" aria-hidden="true" />
+                        <div class="review-meta">
+                            <span class="review-author">Ana L.</span>
+                            <span class="review-date">Hace 1 mes</span>
+                        </div>
+                        <img src="https://www.google.com/favicon.ico" alt="" class="google-logo-small"
+                            aria-hidden="true" />
+                    </div>
+                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                    <p class="review-text">
+                        "Atención inmejorable. Se preocupan realmente por sus clientes y
+                        buscan soluciones adaptadas a cada caso. Mi experiencia de
+                        alquiler ha sido perfecta gracias a ellos."
+                    </p>
+                </article>
+            </div>
+
+            <div class="reviews-footer">
+                <a href="https://www.google.com/search?sca_esv=2bbc76108a4ecd6f&sxsrf=ANbL-n5ltNSQkdNbX7Jc7gm9DpRq6qb9Bg:1771241279426&q=opiniones+de+m+%26+g+-inmobiliaria+%26+decoracion-&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-D8SbTwdJJzmwuf9SBaX0ICkFONgnrZu0JsfiEbPNrQWB2ldf1buKNPc3aOixTSap6PiDASkzxIkp7q80J1RfFIv_m_yTMJU5mdxGqhzp3wzOv5zVGJn8Z_HmAJp2hP5mP3j1Mq2n8DjVPF3WSbWnCk9VqLC2ci7HSjCoQbnF6MkY7GRK_Qj_VmvXgVsbz3Uigrci5g&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTCo-2S5UK1ii5hZFYO2BNbe2Q4PeBeDzdxr9TMFkT7PoRemp6NxXDuE-kL80S-hl98ygJwzZnr6Tt6PYBHPseoEdJylpruhkSbsE8GrRKs4SyfiFp9r2--VTYhx5DWt-JLJyc4%3D&sa=X&ved=2ahUKEwik95X6892SAxWJVKQEHYZMH7oQxKsJKAB6BAgsEAE&ictx=1&biw=1536&bih=730&dpr=1.25"
+                    target="_blank" rel="noopener noreferrer" class="cta-button google-cta">
+                    <span>Ver todas las reseñas en Google</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+                <p class="update-note">
+                    Actualizado mensualmente desde Google Business
+                </p>
+            </div>
+        </section>
+
+        <section class="newsletter" id="contacto">
+            <div class="newsletter-content">
+                <h2>Únete a la comunidad</h2>
+                <p>
+                    ¿Te gusta estar al día sobre las últimas novedades del mercado
+                    inmobiliario?
+                </p>
+                <p style="font-weight: 600; margin-bottom: 2rem">
+                    Suscríbete y recibe una guía: <br />
+                    <span style="color: var(--color-accent)">"Los Derechos que tienes como propietario y nadie te va a
+                        contar"</span>
+                </p>
+
+                <script src="https://js-eu1.hsforms.net/forms/embed/147825139.js" defer></script>
+<div class="hs-form-frame" data-region="eu1" data-form-id="e52b1939-45f7-4443-aff7-640ab22b9426" data-portal-id="147825139"></div>
+
+                <p style="
+              font-size: 0.8rem;
+              margin-top: 1.5rem;
+              opacity: 0.7;
+              line-height: 1.4;
+            ">
+                    De acuerdo con la L.O. 3/2018 de Protección de Datos, le informamos
+                    que sus datos serán tratados con la finalidad de enviarle
+                    información solicitada. Ud. podrá acceder, rectificar y suprimir sus
+                    datos en cualquier momento. Consulte nuestra Política de Privacidad.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>M&G Inmobiliaria</h3>
+                <p>La forma más personal de hacer inmobiliaria desde 1998.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111"
+                        target="_blank" rel="noopener noreferrer"> Paseo Teruel 40, Zaragoza</a>
+                </p>
+                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+                <p>
+                    <a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a>
+                </p>
+                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+                <p><a href="footer/cookies.html">Cookies</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./JavaScript/common.js"></script>
+    <script src="JavaScript/index.js"></script>
+    
+
+</body>
+
+</html>
