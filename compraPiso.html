@@ -1,320 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Encuentra tu piso ideal en Zaragoza con MyG Inmobiliaria. Compra segura con asesoramiento profesional.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Encuentra tu piso ideal en Zaragoza con MyG Inmobiliaria. Compra segura con asesoramiento profesional."
+    />
     <title>Compra Segura | Pisos en Venta | MyG Inmobiliaria</title>
-    <link rel="stylesheet" href="css/styleCompras.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styleCompras.css" />
+  </head>
+  <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    
+
     <header id="header">
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
-                <span id="logo-texto" style="display: none;">MyG<span> Inmobiliaria</span></span>
+      <nav>
+        <a href="index.html" class="logo">
+          <img
+            src="./fotos/myg-logo.webp"
+            alt="MyG Inmobiliaria"
+            class="logo-img"
+            onerror="
+              this.style.display = 'none';
+              document.getElementById('logo-texto').style.display = 'block';
+            "
+          />
+          <span id="logo-texto" style="display: none"
+            >MyG<span> Inmobiliaria</span></span
+          >
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+
+          <li class="dropdown">
+            <a
+              href="servicios.html"
+              class="active"
+              onclick="toggleDropdown(event)"
+            >
+              Servicios
             </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
-                
-                <li class="dropdown">
-                    <a href="servicios.html" class="active" onclick="toggleDropdown(event)">
-                        Servicios 
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
-                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
-                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
-                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="ventasPiso.html" onclick="closeMenu()"
+                  >Venta de Propiedades</a
+                >
+              </li>
+              <li>
+                <a href="compraPiso.html" onclick="closeMenu()"
+                  >Compra Segura</a
+                >
+              </li>
+              <li>
+                <a href="alquilerPiso.html" onclick="closeMenu()"
+                  >Gestión de Alquileres</a
+                >
+              </li>
             </ul>
-            
-            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+          </li>
+
+          <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+          <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+        </ul>
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+          onclick="toggleMenu()"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
     </header>
 
     <main id="main-content">
-        <section class="page-header">
-            <h1>Compra Segura</h1>
-            <p>Encuentra tu vivienda ideal en Zaragoza con total confianza</p>
-        </section>
+      <section class="page-header">
+        <h1>Compra Segura</h1>
+        <p>Encuentra tu vivienda ideal en Zaragoza con total confianza</p>
+      </section>
 
-        <!-- Filtros -->
-        <section class="filters-section">
-            <div class="filters-container">
-                <div class="filter-group">
-                    <label for="filterTipo">Tipo de propiedad</label>
-                    <select id="filterTipo">
-                        <option value="todos">Todos</option>
-                        <option value="piso">Piso</option>
-                        <option value="atico">Ático</option>
-                        <option value="duplex">Dúplex</option>
-                        <option value="casa">Casa/Chalet</option>
-                    </select>
+      <!-- Filtros -->
+      <section class="filters-section">
+        <div class="filters-container">
+          <div class="filter-group">
+            <label for="filterTipo">Tipo de propiedad</label>
+            <select id="filterTipo">
+              <option value="todos">Todos</option>
+              <option value="piso">Piso</option>
+              <option value="atico">Ático</option>
+              <option value="duplex">Dúplex</option>
+              <option value="casa">Casa/Chalet</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterZona">Zona</label>
+            <select id="filterZona">
+              <option value="todas">Todas las zonas</option>
+              <option value="centro">Centro</option>
+              <option value="delicias">Delicias</option>
+              <option value="torrero">Torrero</option>
+              <option value="actur">Actur</option>
+              <option value="romareda">Romareda</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterPrecio">Precio máximo</label>
+            <select id="filterPrecio">
+              <option value="todos">Sin límite</option>
+              <option value="150000">150.000 €</option>
+              <option value="200000">200.000 €</option>
+              <option value="250000">250.000 €</option>
+              <option value="300000">300.000 €</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterHabs">Habitaciones</label>
+            <select id="filterHabs">
+              <option value="todos">Cualquiera</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+
+          <button class="filter-button" onclick="filterProperties()">
+            Filtrar
+          </button>
+        </div>
+      </section>
+
+      <!-- Listado de propiedades -->
+      <section class="properties-section">
+        <div class="section-title">
+          <h2>Pisos disponibles en venta</h2>
+          <p>Selecciona una propiedad para ver más detalles en Idealista</p>
+        </div>
+
+        <div class="properties-grid" id="propertiesGrid">
+          <!-- Propiedad 1 -->
+          <article
+            class="property-card animate-on-scroll"
+            data-tipo="piso"
+            data-zona="centro"
+            data-precio="185000"
+            data-habs="3"
+          >
+            <div class="property-image">
+              <img
+                src="piso1.jpg"
+                alt="Piso en Centro"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/400x300/667eea/ffffff?text=Piso+Centro'
+                "
+              />
+              <span class="property-badge">En venta</span>
+              <div class="property-price">190.000 €</div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">Piso Centro</h3>
+              <div class="property-location">
+                📍 Calle Conde Aranda, Centro, Zaragoza
+              </div>
+              <div class="property-features">
+                <span class="feature"
+                  ><span class="feature-icon"></span> 120 m²</span
+                >
+                <span class="feature"
+                  ><span class="feature-icon"></span> 4 hab y salon.</span
+                >
+                <span class="feature"
+                  ><span class="feature-icon"></span> 1 baño, 1 aseo y
+                  calefacción individual
+                </span>
+                <span class="feature"
+                  ><span class="feature-icon"></span> 3ª planta con
+                  ascensor</span
+                >
+                <span class="feature"
+                  ><span class="feature-icon"></span> Terraza acritalada y
+                  persianas electricas</span
+                >
+                <span class="feature"
+                  ><span class="feature-icon"></span> Hilo musical</span
+                >
+                <span class="feature"
+                  ><span class="feature-icon"></span> 4 armarios
+                  empotrados</span
+                >
+              </div>
+              <p class="property-description">
+                Magnífico piso para entrar a vivir desde el dia 1.
+              </p>
+              <div class="property-card">
+                <!-- Aquí es donde Idealista te pedirá pegar su "código" (Script) -->
+                <div id="contenedor-idealista-widget">
+                  <!-- El Script que te den irá aquí -->
                 </div>
-                
-                <div class="filter-group">
-                    <label for="filterZona">Zona</label>
-                    <select id="filterZona">
-                        <option value="todas">Todas las zonas</option>
-                        <option value="centro">Centro</option>
-                        <option value="delicias">Delicias</option>
-                        <option value="torrero">Torrero</option>
-                        <option value="actur">Actur</option>
-                        <option value="romareda">Romareda</option>
-                    </select>
+
+                <div class="property-footer">
+                  <!-- Tu enlace actual como refuerzo -->
+                  <a
+                    href="https://www.idealista.com/pro/p08109689/venta-viviendas/"
+                    target="_blank"
+                    class="btn-primary"
+                    >Ver ficha completa</a
+                  >
+
+                  <!-- Este botón debe activar tu formulario de HubSpot -->
+                  <button
+                    class="btn-secondary"
+                    onclick="abrirFormularioHubSpot('ID_DEL_PISO')"
+                  >
+                    Me interesa este piso
+                  </button>
                 </div>
-                
-                <div class="filter-group">
-                    <label for="filterPrecio">Precio máximo</label>
-                    <select id="filterPrecio">
-                        <option value="todos">Sin límite</option>
-                        <option value="150000">150.000 €</option>
-                        <option value="200000">200.000 €</option>
-                        <option value="250000">250.000 €</option>
-                        <option value="300000">300.000 €</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="filterHabs">Habitaciones</label>
-                    <select id="filterHabs">
-                        <option value="todos">Cualquiera</option>
-                        <option value="1">1+</option>
-                        <option value="2">2+</option>
-                        <option value="3">3+</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                
-                <button class="filter-button" onclick="filterProperties()">Filtrar</button>
+              </div>
             </div>
-        </section>
+          </article>
+          
+        </div>
 
-        <!-- Listado de propiedades -->
-        <section class="properties-section">
-            <div class="section-title">
-                <h2>Pisos disponibles en venta</h2>
-                <p>Selecciona una propiedad para ver más detalles en Idealista</p>
-            </div>
+        <!-- Mensaje sin resultados (oculto por defecto) -->
+        <div class="no-results" id="noResults" style="display: none">
+          <div class="no-results-icon">🔍</div>
+          <h3>No hay propiedades que coincidan con tu búsqueda</h3>
+          <p>
+            Prueba a ajustar los filtros o
+            <a href="#" onclick="resetFilters()">ver todas las propiedades</a>
+          </p>
+        </div>
+      </section>
 
-            <div class="properties-grid" id="propertiesGrid">
-                
-                <!-- Propiedad 1 -->
-                <article class="property-card animate-on-scroll" data-tipo="piso" data-zona="centro" data-precio="185000" data-habs="3">
-                    <div class="property-image">
-                        <img src="piso1.jpg" alt="Piso en Centro" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/667eea/ffffff?text=Piso+Centro'">
-                        <span class="property-badge">En venta</span>
-                        <div class="property-price">190.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Piso Centro</h3>
-                        <div class="property-location">📍 Calle Conde Aranda, Centro, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 120 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 4 hab y salon.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 1 baño, 1 aseo y calefacción individual </span>
-                            <span class="feature"><span class="feature-icon">🏢</span> 3ª planta con ascensor</span>
-                            <span class="feature"><span class="feature-icon">☀️</span> Terraza acritalada y persianas electricas</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> Hilo musical</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 4 armarios empotrados</span>
-                        </div>
-                        <p class="property-description">
-                            Magnífico piso para entrar a vivir desde el dia 1.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Piso Centro')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Propiedad 2 -->
-                <article class="property-card animate-on-scroll" data-tipo="atico" data-zona="romareda" data-precio="275000" data-habs="4">
-                    <div class="property-image">
-                        <img src="piso2.jpg" alt="Ático Romareda" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/e74c3c/ffffff?text=Atico+Romareda'">
-                        <span class="property-badge new">Nuevo</span>
-                        <div class="property-price">275.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Ático con terraza en Romareda</h3>
-                        <div class="property-location">📍 Avda. de Goya, Romareda, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 120 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 4 hab.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 2 baños</span>
-                            <span class="feature"><span class="feature-icon">☀️</span> Terraza 30m²</span>
-                        </div>
-                        <p class="property-description">
-                            Espectacular ático dúplex con gran terraza soleada. Vistas despejadas, garaje incluido y trastero. Zona tranquila cerca del Estadio de La Romareda.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Atico Romareda')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Propiedad 3 -->
-                <article class="property-card animate-on-scroll" data-tipo="piso" data-zona="delicias" data-precio="145000" data-habs="2">
-                    <div class="property-image">
-                        <img src="piso3.jpg" alt="Piso Delicias" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/27ae60/ffffff?text=Piso+Delicias'">
-                        <span class="property-badge">En venta</span>
-                        <div class="property-price">145.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Piso reformado en Delicias</h3>
-                        <div class="property-location">📍 Calle Madre Rafols, Delicias, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 70 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 2 hab.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 1 baño</span>
-                            <span class="feature"><span class="feature-icon">🚗</span> Plaza garaje</span>
-                        </div>
-                        <p class="property-description">
-                            Acogedor piso completamente reformado en las Delicias. Cocina americana, baño moderno y plaza de garaje incluida. Excelente comunicación con el centro.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Piso Delicias')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Propiedad 4 -->
-                <article class="property-card animate-on-scroll" data-tipo="duplex" data-zona="actur" data-precio="220000" data-habs="4">
-                    <div class="property-image">
-                        <img src="piso4.jpg" alt="Dúplex Actur" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/f39c12/ffffff?text=Duplex+Actur'">
-                        <span class="property-badge">En venta</span>
-                        <div class="property-price">220.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Dúplex familiar en Actur</h3>
-                        <div class="property-location">📍 Calle María Zambrano, Actur, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 140 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 4 hab.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 3 baños</span>
-                            <span class="feature"><span class="feature-icon">🌳</span> Zona verde</span>
-                        </div>
-                        <p class="property-description">
-                            Amplio dúplex perfecto para familias. 4 dormitorios, 3 baños, jardín privado y piscina comunitaria. Colegios y parques a pie de calle.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Duplex Actur')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Propiedad 5 -->
-                <article class="property-card animate-on-scroll" data-tipo="piso" data-zona="torrero" data-precio="125000" data-habs="3">
-                    <div class="property-image">
-                        <img src="piso5.jpg" alt="Piso Torrero" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/9b59b6/ffffff?text=Piso+Torrero'">
-                        <span class="property-badge">En venta</span>
-                        <div class="property-price">125.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Piso con potencial en Torrero</h3>
-                        <div class="property-location">📍 Calle Perico Fernández, Torrero, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 95 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 3 hab.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 1 baño</span>
-                            <span class="feature"><span class="feature-icon">🔧</span> Para reformar</span>
-                        </div>
-                        <p class="property-description">
-                            Gran oportunidad de inversión. Piso espacioso para reformar a tu gusto. Excelente ubicación con todos los servicios cercanos.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Piso Torrero')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Propiedad 6 -->
-                <article class="property-card animate-on-scroll" data-tipo="casa" data-zona="zona-universitaria" data-precio="350000" data-habs="5">
-                    <div class="property-image">
-                        <img src="casa1.jpg" alt="Chalet Zona Universitaria" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/34495e/ffffff?text=Chalet+Zaragoza'">
-                        <span class="property-badge new">Nuevo</span>
-                        <div class="property-price">350.000 €</div>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Chalet adosado con jardín</h3>
-                        <div class="property-location">📍 C/ Poeta Miguel Labordeta, Zaragoza</div>
-                        <div class="property-features">
-                            <span class="feature"><span class="feature-icon">📐</span> 200 m²</span>
-                            <span class="feature"><span class="feature-icon">🛏️</span> 5 hab.</span>
-                            <span class="feature"><span class="feature-icon">🚿</span> 3 baños</span>
-                            <span class="feature"><span class="feature-icon">🏡</span> Jardín 150m²</span>
-                        </div>
-                        <p class="property-description">
-                            Magnífico chalet adosado en zona residencial. 5 dormitorios, sótano, jardín privado y barbacoa. Cerca de colegios y zonas verdes.
-                        </p>
-                        <div class="property-footer">
-                            <a href="https://www.idealista.com/pro/p08109689/venta-viviendas/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver en Idealista</a>
-                            <button class="btn-secondary" onclick="contactar('Chalet Zaragoza')">Contactar</button>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- Mensaje sin resultados (oculto por defecto) -->
-            <div class="no-results" id="noResults" style="display: none;">
-                <div class="no-results-icon">🔍</div>
-                <h3>No hay propiedades que coincidan con tu búsqueda</h3>
-                <p>Prueba a ajustar los filtros o <a href="#" onclick="resetFilters()">ver todas las propiedades</a></p>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>¿No encuentras lo que buscas?</h2>
-                <p>Déjanos tus preferencias y te avisamos cuando tengamos nuevas propiedades que se ajusten a tus necesidades.</p>
-                <a href="index.html#contacto" class="cta-button">Crear alerta personalizada</a>
-            </div>
-        </section>
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>¿No encuentras lo que buscas?</h2>
+          <p>
+            Déjanos tus preferencias y te avisamos cuando tengamos nuevas
+            propiedades que se ajusten a tus necesidades.
+          </p>
+          <a href="index.html#contacto" class="cta-button"
+            >Crear alerta personalizada</a
+          >
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>M&G Inmobiliaria</h3>
-                <p>La forma más personal de hacer inmobiliaria. Transformando viviendas en historias de vida desde 2010.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5914c4cee55611:0xde36bf7297b31e67?sa=X&ved=1t:8290&ictx=111" target="_blank"> Paseo Teruel 40, Zaragoza</a></p>
-                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
-                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
-                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces</h3>
-                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
-                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
-                <p><a href="footer/cookies.html">Cookies</a></p> 
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>M&G Inmobiliaria</h3>
+          <p>
+            La forma más personal de hacer inmobiliaria.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p>
+            <a
+              href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5914c4cee55611:0xde36bf7297b31e67?sa=X&ved=1t:8290&ictx=111"
+              target="_blank"
+            >
+              Paseo Teruel 40, Zaragoza</a
+            >
+          </p>
+          <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+          <p>
+            <a href="mailto:info@inmobiliariamyg.com">
+              info@inmobiliariamyg.com</a
+            >
+          </p>
+          <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
         </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+          <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+          <p><a href="footer/cookies.html">Cookies</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+      </div>
     </footer>
     <script src="./JavaScript/common.js"></script>
     <script src="JavaScript/compraPiso.js"></script>
-    
-</body>
+  </body>
 </html>

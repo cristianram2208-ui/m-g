@@ -25,3 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.log('✅ Lógica de Alquiler activada');
 });
+
+function openTab(tabName) {
+    // 1. Esconder todos los contenidos de las pestañas
+    const contents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+    }
+
+    // 2. Quitar la clase 'active' de todos los botones
+    const buttons = document.getElementsByClassName("tab-button");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    // 3. Mostrar la pestaña actual y añadir clase 'active' al botón que hizo click
+    document.getElementById(tabName).classList.add("active");
+    event.currentTarget.classList.add("active");
+}
