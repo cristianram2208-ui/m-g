@@ -1,424 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Alquileres | M&G Inmobiliaria</title>
-    <link rel="stylesheet" href="css/styleAlquiler.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styleAlquiler.css" />
+    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+  </head>
+  <body>
     <header id="header">
-        <nav>
-            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 1.5rem; font-weight: 700; color: #2c3e50;">
-                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
-                <span id="logo-texto" style="display: none;">M&G<span style="color: #e67e22;"> Inmobiliaria</span></span>
+      <nav>
+        <a
+          href="index.html"
+          class="logo"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+          "
+        >
+          <img
+            src="./fotos/myg-logo.webp"
+            alt="MyG Inmobiliaria"
+            class="logo-img"
+            onerror="
+              this.style.display = 'none';
+              document.getElementById('logo-texto').style.display = 'block';
+            "
+          />
+          <span id="logo-texto" style="display: none"
+            >M&G<span style="color: #e67e22"> Inmobiliaria</span></span
+          >
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="servicios.html" onclick="toggleDropdown(event)">
+              Servicios
             </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
-                
-                <li class="dropdown">
-                    <a href="servicios.html" onclick="toggleDropdown(event)">
-                        Servicios 
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
-                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
-                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
-                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            <ul class="dropdown-menu">
+              <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
+              <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
+              <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
             </ul>
-            
-            <div class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+          </li>
+
+          <li><a href="nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+          <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+        </ul>
+
+        <div class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
     </header>
 
     <section class="page-header">
-        <h1>Gestión de Alquileres</h1>
-        <p>Obtén el máximo rendimiento de tu propiedad sin preocupaciones</p>
+      <h1>Gestión de Alquileres</h1>
+      <p>Obtén el máximo rendimiento de tu propiedad sin preocupaciones</p>
     </section>
 
     <section class="intro-section">
-        <h2>¿Eres propietario?</h2>
-        <p>Deja la gestión de tu propiedad en manos de profesionales. Nos encargamos de todo: desde la búsqueda del inquilino ideal hasta la gestión de incidencias, para que tú solo te preocupes de cobrar.</p>
+      <h2>¿Eres propietario?</h2>
+      <p>
+        Deja la gestión de tu propiedad en manos de profesionales. Nos
+        encargamos de todo.
+      </p>
     </section>
 
-    <!-- Tabs -->
     <section class="tabs-section">
-        <div class="tabs-container">
-            <div class="tabs-nav">
-                <button class="tab-button active" onclick="openTab('propietario')">Soy Propietario</button>
-                <button class="tab-button" onclick="openTab('inquilino')">Busco Alquiler</button>
-            </div>
-            
-            <!-- Contenido Propietario -->
-            <div id="propietario" class="tab-content active">
-                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Gestionamos tu propiedad de principio a fin</h3>
-                <p style="color: #666;">Completa el formulario y te contactaremos en menos de 24 horas para ofrecerte un plan de gestión personalizado.</p>
-            </div>
-            
-            <!-- Contenido Inquilino -->
-            <div id="inquilino" class="tab-content">
-                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Encuentra tu hogar en alquiler</h3>
-                <p style="color: #666;">Visita nuestra sección de pisos en alquiler en Idealista o contacta con nosotros para una búsqueda personalizada.</p>
-                <a href="https://www.idealista.com/pro/p08109689/alquiler-viviendas/" target="_blank" class="cta-button" style="margin-top: 1rem; display: inline-block;">Ver pisos en alquiler</a>
-            </div>
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <button class="tab-button active" onclick="openTab('propietario')">
+            Soy Propietario
+          </button>
+          <button class="tab-button" onclick="openTab('inquilino')">
+            Busco Alquiler
+          </button>
         </div>
+
+        <div id="propietario" class="tab-content active">
+          <h3 style="color: var(--color-primary); margin-bottom: 1rem">
+            Gestionamos tu propiedad de principio a fin
+          </h3>
+          <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "147825139",
+    formId: "0c0927d4-c9c2-40e3-81ae-94b96a5bdd84",
+    region: "eu1"
+  });
+</script>
+        </div>
+
+        <div id="inquilino" class="tab-content">
+          <h3 style="color: var(--color-primary); margin-bottom: 1rem">
+            Encuentra tu hogar en alquiler
+          </h3>
+          <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "147825139",
+    formId: "0565bc36-b159-4eb4-82c2-faa5c1ef632a",
+    region: "eu1"
+  });
+</script>
+          </script>
+          
+          <a
+            href="https://www.idealista.com/pro/p08109689/alquiler-viviendas/"
+            target="_blank"
+            class="cta-button"
+            style="margin-top: 1rem; display: inline-block"
+            >Ver pisos en alquiler</a
+          >
+        </div>
+      </div>
     </section>
 
-    <!-- Formulario para Propietarios -->
-    <section class="form-section" id="formulario">
-        <div class="form-container">
-            <h2>Formulario de Gestión de Alquiler</h2>
-            <p class="form-subtitle">Cuéntanos sobre tu propiedad y te prepararemos un presupuesto sin compromiso</p>
-            
-            <form id="rentalForm" action="https://formsubmit.co/aplicaciones.bpp@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Nueva solicitud de ALQUILER - MyG Inmobiliaria">
-                <input type="hidden" name="_next" value="https://inmobiliariamyg.webcindario.com//gracias.html">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="form-grid">
-                    <!-- Datos del Propietario -->
-                    <div class="form-group full-width">
-                        <h3 style="color: var(--color-primary); margin: 1.5rem 0 0.5rem 0; font-size: 1.2rem;">Datos del Propietario</h3>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nombre completo <span>*</span></label>
-                        <input type="text" name="nombre_propietario" required placeholder="Ej: Juan García">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Teléfono <span>*</span></label>
-                        <input type="tel" name="telefono" required placeholder="Ej: 612 345 678">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email <span>*</span></label>
-                        <input type="email" name="email" required placeholder="Ej: juan@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>DNI/NIE</label>
-                        <input type="text" name="dni" placeholder="Ej: 12345678A">
-                    </div>
-
-                    <!-- Datos de la Propiedad -->
-                    <div class="form-group full-width">
-                        <h3 style="color: var(--color-primary); margin: 1.5rem 0 0.5rem 0; font-size: 1.2rem;">Datos de la Propiedad</h3>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tipo de propiedad <span>*</span></label>
-                        <select name="tipo_propiedad" required>
-                            <option value="">Selecciona...</option>
-                            <option value="piso">Piso</option>
-                            <option value="atico">Ático</option>
-                            <option value="duplex">Dúplex</option>
-                            <option value="estudio">Estudio</option>
-                            <option value="casa">Casa/Chalet</option>
-                            <option value="local">Local Comercial</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Dirección completa <span>*</span></label>
-                        <input type="text" name="direccion" required placeholder="Ej: Calle Aragón 123, 2ºB">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Código Postal <span>*</span></label>
-                        <input type="text" name="codigo_postal" required placeholder="Ej: 50001">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Zona/Barrio</label>
-                        <input type="text" name="zona" placeholder="Ej: Centro, Delicias...">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Superficie construida (m²) <span>*</span></label>
-                        <input type="number" name="metros" required placeholder="Ej: 85">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Habitaciones <span>*</span></label>
-                        <select name="habitaciones" required>
-                            <option value="">Selecciona...</option>
-                            <option value="0">0 (Estudio)</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5 o más</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Baños <span>*</span></label>
-                        <select name="banos" required>
-                            <option value="">Selecciona...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3+">3 o más</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Planta</label>
-                        <select name="planta">
-                            <option value="">Selecciona...</option>
-                            <option value="bajo">Bajo</option>
-                            <option value="intermedio">Intermedio</option>
-                            <option value="atico">Ático</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Tiene ascensor? <span>*</span></label>
-                        <select name="ascensor" required>
-                            <option value="">Selecciona...</option>
-                            <option value="si">Sí</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Tiene terraza/balcón?</label>
-                        <select name="terraza">
-                            <option value="no">No</option>
-                            <option value="balcon">Balcón</option>
-                            <option value="terraza">Terraza</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Incluye plaza de garaje?</label>
-                        <select name="garaje">
-                            <option value="no">No</option>
-                            <option value="si_incluida">Sí, incluida en el precio</option>
-                            <option value="si_opcional">Sí, con opción a alquilar</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Incluye trastero?</label>
-                        <select name="trastero">
-                            <option value="no">No</option>
-                            <option value="si">Sí</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Estado de la vivienda <span>*</span></label>
-                        <select name="estado" required>
-                            <option value="">Selecciona...</option>
-                            <option value="nuevo">A estrenar</option>
-                            <option value="excelente">Excelente estado</option>
-                            <option value="bueno">Buen estado</option>
-                            <option value="reformar">Necesita reforma</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Amueblado <span>*</span></label>
-                        <select name="amueblado" required>
-                            <option value="">Selecciona...</option>
-                            <option value="amueblado">Totalmente amueblado</option>
-                            <option value="parcial">Parcialmente amueblado</option>
-                            <option value="sin_amueblar">Sin amueblar</option>
-                        </select>
-                    </div>
-
-                    <!-- Datos del Alquiler -->
-                    <div class="form-group full-width">
-                        <h3 style="color: var(--color-primary); margin: 1.5rem 0 0.5rem 0; font-size: 1.2rem;">Condiciones del Alquiler</h3>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Precio mensual esperado (€) <span>*</span></label>
-                        <input type="number" name="precio_mensual" required placeholder="Ej: 800">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Fianza</label>
-                        <select name="fianza">
-                            <option value="1_mes">1 mes</option>
-                            <option value="2_meses" selected>2 meses (legal)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Duración mínima del contrato</label>
-                        <select name="duracion_minima">
-                            <option value="6_meses">6 meses</option>
-                            <option value="1_ano" selected>1 año</option>
-                            <option value="2_anos">2 años o más</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Aceptas mascotas?</label>
-                        <select name="mascotas">
-                            <option value="no">No</option>
-                            <option value="consultar">A consultar</option>
-                            <option value="si">Sí</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>Servicios incluidos en el precio</label>
-                        <input type="text" name="servicios_incluidos" placeholder="Ej: Agua, comunidad...">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>Descripción adicional / Extras</label>
-                        <textarea name="descripcion" placeholder="Describe cualquier característica especial: electrodomésticos, armarios empotrados, calefacción, aire acondicionado, vistas, orientación, etc."></textarea>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>¿Cuándo estará disponible? <span>*</span></label>
-                        <input type="date" name="fecha_disponible" required>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="privacy" name="privacy" required>
-                            <label for="privacy">He leído y acepto la <a href="#">Política de Privacidad</a> y el tratamiento de mis datos para la gestión de alquiler. <span>*</span></label>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="marketing" name="marketing">
-                            <label for="marketing">Acepto recibir información comercial sobre productos y servicios inmobiliarios (opcional).</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campos ocultos para Formspree -->
-                <input type="hidden" name="_subject" value="Nueva solicitud de Gestión de Alquiler - MyG Inmobiliaria">
-                <input type="hidden" name="_replyto" value="%email%">
-
-                <button type="submit" class="submit-button">Solicitar gestión de alquiler</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
     <section class="benefits-section">
-        <div class="benefits-container">
-            <div class="section-header">
-                <h2>¿Por qué gestionar tu alquiler con nosotros?</h2>
-                <p>Todo lo que incluye nuestro servicio de gestión integral</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔍</div>
-                    <h3>Selección de inquilinos</h3>
-                    <p>Filtramos y verificamos a cada candidato: nóminas, referencias y historial para tu tranquilidad.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📝</div>
-                    <h3>Contrato legal</h3>
-                    <p>Redacción de contratos con todas las garantías legales y cláusulas de protección.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>Seguro de impago</h3>
-                    <p>Cobertura ante impagos de renta y protección de daños en la vivienda.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔧</div>
-                    <h3>Mantenimiento 24h</h3>
-                    <p>Gestión de averías e incidencias con red de profesionales cualificados.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Cobro garantizado</h3>
-                    <p>Te transferimos la renta puntualmente cada mes.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Informes periódicos</h3>
-                    <p>Control del estado del inmueble y reportes de cada visita realizada.</p>
-                </div>
-            </div>
+      <div class="benefits-container">
+        <div class="section-header">
+          <h2>¿Por qué gestionar tu alquiler con nosotros?</h2>
         </div>
-    </section>
-
-    <!-- Proceso -->
-    <section class="process-section">
-        <div class="process-container">
-            <h2>¿Cómo funciona?</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Valoración</h3>
-                    <p>Visitamos tu propiedad y determinamos el precio de mercado óptimo.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Publicación</h3>
-                    <p>Anuncio profesional en Idealista y principales portales inmobiliarios.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Selección</h3>
-                    <p>Filtramos candidatos y te presentamos solo a los mejores inquilinos.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Contrato</h3>
-                    <p>Firma con todas las garantías y seguro de impago activado.</p>
-                </div>
-            </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🔍</div>
+            <h3>Selección de inquilinos</h3>
+            <p>Filtramos y verificamos a cada candidato.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h3>Seguro de impago</h3>
+            <p>Cobertura ante impagos de renta.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔧</div>
+            <h3>Mantenimiento 24h</h3>
+            <p>Gestión de averías e incidencias.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>¿Tienes dudas sobre la gestión de alquiler?</h2>
-            <p>Contacta con nosotros y te explicamos sin compromiso todas las ventajas de nuestro servicio.</p>
-            <a href="contacto.html" class="cta-button">Contactar ahora</a>
-        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>M&G Inmobiliaria</h3>
-                <p>La forma más personal de hacer inmobiliaria.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5914c4cee55611:0xde36bf7297b31e67?sa=X&ved=1t:8290&ictx=111" target="_blank"> Paseo Teruel 40, Zaragoza</a></p>
-                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
-                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
-                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces</h3>
-                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
-                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
-                <p><a href="footer/cookies.html">Cookies</a></p>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>M&G Inmobiliaria</h3>
+          <p>La forma más personal de hacer inmobiliaria.</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+      </div>
     </footer>
+
     <script src="./JavaScript/common.js"></script>
     <script src="./JavaScript/alquilerPiso.js"></script>
-    
-</body>
+  </body>
 </html>

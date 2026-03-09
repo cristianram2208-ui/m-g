@@ -7,6 +7,13 @@
     box-sizing: border-box;
 }
 
+.contenedor-formulario {
+  max-width: 600px;      /* El ancho máximo que quieras (ajústalo a tu gusto) */
+  margin: 0 auto;       /* Esto es el "truco mágico" para centrar horizontalmente */
+  padding: 20px;        /* Un poco de aire alrededor por si acaso */
+  box-sizing: border-box;
+}
+
 :root {
     /* Colores principales */
     --color-primary: #2c3e50;

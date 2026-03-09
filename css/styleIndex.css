@@ -7,6 +7,22 @@
     box-sizing: border-box;
 }
 
+/* Truco para ocultar el branding de HubSpot */
+.hs-featured-image-wrapper + .hs-richtext, 
+.hs-form-footer, 
+.hs-back-link {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+}
+
+/* Este es el que suele funcionar con el link de "Crea tus propios..." */
+a[href*="hubspot.com/products/marketing/forms"] {
+    display: none !important;
+}
+
 :root {
     /* Colores principales */
     --color-primary: #2c3e50;

@@ -33,6 +33,20 @@ function initLazyLoading() {
 // 7. EVENT LISTENERS
 // ============================================
 
+
+  window.addEventListener('message', event => {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+      // Buscamos el iframe de HubSpot
+      const hubspotIframe = document.querySelector('.hs-form-iframe');
+      if (hubspotIframe) {
+        const style = document.createElement('style');
+        style.textContent = '.hs-back-link { display: none !important; }';
+        hubspotIframe.contentDocument.head.appendChild(style);
+      }
+    }
+  });
+
+
 /**
  * Inicializa todos los event listeners
  */

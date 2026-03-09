@@ -9,6 +9,12 @@
     />
     <title>Compra Segura | Pisos en Venta | MyG Inmobiliaria</title>
     <link rel="stylesheet" href="css/styleCompras.css" />
+
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js-eu1.hsforms.net/forms/embed/v2.js"
+    ></script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -70,9 +76,7 @@
           onclick="toggleMenu()"
           aria-label="Abrir menú de navegación"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </nav>
     </header>
@@ -83,7 +87,6 @@
         <p>Encuentra tu vivienda ideal en Zaragoza con total confianza</p>
       </section>
 
-      <!-- Filtros -->
       <section class="filters-section">
         <div class="filters-container">
           <div class="filter-group">
@@ -137,7 +140,6 @@
         </div>
       </section>
 
-      <!-- Listado de propiedades -->
       <section class="properties-section">
         <div class="section-title">
           <h2>Pisos disponibles en venta</h2>
@@ -145,7 +147,6 @@
         </div>
 
         <div class="properties-grid" id="propertiesGrid">
-          <!-- Propiedad 1 -->
           <article
             class="property-card animate-on-scroll"
             data-tipo="piso"
@@ -172,86 +173,80 @@
                 📍 Calle Conde Aranda, Centro, Zaragoza
               </div>
               <div class="property-features">
-                <span class="feature"
-                  ><span class="feature-icon"></span> 120 m²</span
-                >
-                <span class="feature"
-                  ><span class="feature-icon"></span> 4 hab y salon.</span
-                >
-                <span class="feature"
-                  ><span class="feature-icon"></span> 1 baño, 1 aseo y
-                  calefacción individual
-                </span>
-                <span class="feature"
-                  ><span class="feature-icon"></span> 3ª planta con
-                  ascensor</span
-                >
-                <span class="feature"
-                  ><span class="feature-icon"></span> Terraza acritalada y
-                  persianas electricas</span
-                >
-                <span class="feature"
-                  ><span class="feature-icon"></span> Hilo musical</span
-                >
-                <span class="feature"
-                  ><span class="feature-icon"></span> 4 armarios
-                  empotrados</span
-                >
+                <span class="feature">120 m²</span>
+                <span class="feature">4 hab y salon.</span>
+                <span class="feature">1 baño, 1 aseo</span>
+                <span class="feature">Ascensor</span>
               </div>
               <p class="property-description">
                 Magnífico piso para entrar a vivir desde el dia 1.
               </p>
-              <div class="property-card">
-                <!-- Aquí es donde Idealista te pedirá pegar su "código" (Script) -->
-                <div id="contenedor-idealista-widget">
-                  <!-- El Script que te den irá aquí -->
-                </div>
-
-                <div class="property-footer">
-                  <!-- Tu enlace actual como refuerzo -->
-                  <a
-                    href="https://www.idealista.com/pro/p08109689/venta-viviendas/"
-                    target="_blank"
-                    class="btn-primary"
-                    >Ver ficha completa</a
-                  >
-
-                  <!-- Este botón debe activar tu formulario de HubSpot -->
-                  <button
-                    class="btn-secondary"
-                    onclick="abrirFormularioHubSpot('ID_DEL_PISO')"
-                  >
-                    Me interesa este piso
-                  </button>
-                </div>
+              <div
+                class="property-footer"
+                style="display: flex; gap: 10px; margin-top: 15px"
+              >
+                <a
+                  href="https://www.idealista.com/pro/p08109689/venta-viviendas/"
+                  target="_blank"
+                  class="btn-primary"
+                  >Ver ficha</a
+                >
+                <button
+                  class="btn-secondary"
+                  onclick="
+                    document
+                      .getElementById('seccion-formulario')
+                      .scrollIntoView({ behavior: 'smooth' })
+                  "
+                >
+                  Me interesa
+                </button>
               </div>
             </div>
           </article>
-          
         </div>
 
-        <!-- Mensaje sin resultados (oculto por defecto) -->
         <div class="no-results" id="noResults" style="display: none">
           <div class="no-results-icon">🔍</div>
-          <h3>No hay propiedades que coincidan con tu búsqueda</h3>
+          <h3>No hay propiedades que coincidan</h3>
           <p>
             Prueba a ajustar los filtros o
-            <a href="#" onclick="resetFilters()">ver todas las propiedades</a>
+            <a href="#" onclick="resetFilters()">ver todas</a>
           </p>
         </div>
       </section>
 
-      <!-- CTA Section -->
-      <section class="cta-section">
+      <section class="cta-section" id="seccion-formulario">
         <div class="cta-content">
-          <h2>¿No encuentras lo que buscas?</h2>
+          <h2>¿No encuentras tu hogar ideal?</h2>
           <p>
-            Déjanos tus preferencias y te avisamos cuando tengamos nuevas
-            propiedades que se ajusten a tus necesidades.
+            Déjanos tus preferencias y te avisaremos en exclusiva cuando
+            tengamos nuevas propiedades que encajen contigo.
           </p>
-          <a href="index.html#contacto" class="cta-button"
-            >Crear alerta personalizada</a
+
+          <div
+            id="hubspot-form-compra"
+            style="
+              margin-top: 2rem;
+              background: white;
+              padding: 20px;
+              border-radius: 8px;
+            "
           >
+            <script
+              charset="utf-8"
+              type="text/javascript"
+              src="//js-eu1.hsforms.net/forms/embed/v2.js"
+            ></script>
+           <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "147825139",
+    formId: "6722cbeb-8e8b-463a-8df9-88c3fa7025cc",
+    region: "eu1"
+  });
+</script>
+          </div>
         </div>
       </section>
     </main>
@@ -260,39 +255,24 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>M&G Inmobiliaria</h3>
-          <p>
-            La forma más personal de hacer inmobiliaria.
-          </p>
+          <p>La forma más personal de hacer inmobiliaria.</p>
         </div>
         <div class="footer-section">
           <h3>Contacto</h3>
-          <p>
-            <a
-              href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5914c4cee55611:0xde36bf7297b31e67?sa=X&ved=1t:8290&ictx=111"
-              target="_blank"
-            >
-              Paseo Teruel 40, Zaragoza</a
-            >
-          </p>
+          <p><a href="#">Paseo Teruel 40, Zaragoza</a></p>
           <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
           <p>
-            <a href="mailto:info@inmobiliariamyg.com">
-              info@inmobiliariamyg.com</a
+            <a href="mailto:info@inmobiliariamyg.com"
+              >info@inmobiliariamyg.com</a
             >
           </p>
-          <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
-        </div>
-        <div class="footer-section">
-          <h3>Enlaces</h3>
-          <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
-          <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
-          <p><a href="footer/cookies.html">Cookies</a></p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        <p>© 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
       </div>
     </footer>
+
     <script src="./JavaScript/common.js"></script>
     <script src="JavaScript/compraPiso.js"></script>
   </body>

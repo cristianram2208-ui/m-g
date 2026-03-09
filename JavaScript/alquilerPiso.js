@@ -2,6 +2,8 @@
 // FUNCIONES ESPECÍFICAS DE ALQUILER
 // ============================================
 
+
+
 function handleNewsletterSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -27,19 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openTab(tabName) {
-    // 1. Esconder todos los contenidos de las pestañas
-    const contents = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < contents.length; i++) {
-        contents[i].classList.remove("active");
-    }
+  // 1. Ocultar todos los contenidos de las pestañas
+  const contents = document.getElementsByClassName("tab-content");
+  for (let content of contents) {
+    content.classList.remove("active");
+    content.style.display = "none"; // Aseguramos que se oculte
+  }
 
-    // 2. Quitar la clase 'active' de todos los botones
-    const buttons = document.getElementsByClassName("tab-button");
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("active");
-    }
+  // 2. Quitar la clase active de todos los botones
+  const buttons = document.getElementsByClassName("tab-button");
+  for (let button of buttons) {
+    button.classList.remove("active");
+  }
 
-    // 3. Mostrar la pestaña actual y añadir clase 'active' al botón que hizo click
-    document.getElementById(tabName).classList.add("active");
-    event.currentTarget.classList.add("active");
+  // 3. Mostrar la pestaña actual y marcar el botón como activo
+  const activeTab = document.getElementById(tabName);
+  activeTab.classList.add("active");
+  activeTab.style.display = "block"; // Mostramos el div que contiene su formulario
+  
+  event.currentTarget.classList.add("active");
 }
