@@ -136,3 +136,73 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  cargarPisos();
+});
+
+function cargarPisos() {
+  // 1. Llamamos al archivo JSON
+  fetch('pisos.json')
+    .then(respuesta => respuesta.json())
+    .then(pisos => {
+      const contenedor = document.getElementById('propertiesGrid');
+      contenedor.innerHTML = ''; // Limpiamos por si acaso
+
+      // 2. Por cada piso en el JSON, creamos su tarjeta HTML
+      pisos.forEach(piso => {
+        const tarjetaHtml = `
+          <article 
+            class="property-card animate-on-scroll" 
+            data-tipo="${piso.tipo}" 
+            data-zona="${piso.zona}" 
+            data-precio="${piso.precioFiltro}" 
+            data-habs="${piso.habitaciones}">
+            
+            <div class="property-image">
+              <img src="${piso.imagen}" alt="${piso.titulo}" loading="lazy" 
+                   onerror="this.src='https://via.placeholder.com/400x300/667eea/ffffff?text=Imagen+No+Disponible'">
+              <span class="property-badge">${piso.estado}</span>
+              <div class="property-price">${piso.precioDisplay}</div>
+            </div>
+            
+            <div class="property-content">
+              <h3 class="property-title">${piso.titulo}</h3>
+              <div class="property-location">${piso.ubicacion}</div>
+              
+              <div class="property-features">
+                <span class="feature">${piso.metros}</span>
+                <span class="feature">${piso.distribucion}</span>
+                <span class="feature">${piso.banos}</span>
+                <span class="feature">${piso.extras}</span>
+              </div>
+              
+              <p class="property-description">${piso.descripcion}</p>
+              
+              <div class="property-footer" style="display: flex; gap: 10px; margin-top: 15px">
+                <a href="${piso.enlaceIdealista}" target="_blank" class="btn-primary">Ver ficha</a>
+                <button class="btn-secondary" onclick="document.getElementById('seccion-formulario').scrollIntoView({ behavior: 'smooth' })">
+                  Me interesa
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+        
+        // 3. Añadimos la tarjeta al contenedor
+        contenedor.innerHTML += tarjetaHtml;
+      });
+
+      // --- LO NUEVO VA AQUÍ ABAJO ---
+
+      // 4. Aplicar animaciones a las tarjetas recién creadas
+      if (typeof initScrollAnimations === 'function') {
+        initScrollAnimations();
+      }
+
+      // 5. Ejecutar los filtros para que cuente cuántos pisos hay visibles al cargar
+      filterProperties();
+      
+    })
+    .catch(error => console.error('Error cargando los pisos:', error));
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "tipo": "piso",
+    "zona": "centro",
+    "precioFiltro": 185000,
+    "precioDisplay": "190.000 €",
+    "habitaciones": 3,
+    "estado": "En venta",
+    "imagen": "piso1.jpg",
+    "titulo": "Piso Centro",
+    "ubicacion": "📍 Calle Conde Aranda, Centro, Zaragoza",
+    "metros": "120 m²",
+    "distribucion": "4 hab y salon.",
+    "banos": "1 baño, 1 aseo",
+    "extras": "Ascensor",
+    "descripcion": "Magnífico piso para entrar a vivir desde el dia 1.",
+    "enlaceIdealista": "https://www.idealista.com/pro/p08109689/venta-viviendas/"
+  },
+  {
+    "id": 2,
+    "tipo": "atico",
+    "zona": "actur",
+    "precioFiltro": 240000,
+    "precioDisplay": "240.000 €",
+    "habitaciones": 4,
+    "estado": "En venta",
+    "imagen": "atico_actur.jpg",
+    "titulo": "Ático Luminoso en el Actur",
+    "ubicacion": "📍 Cerca de Gran Casa, Actur, Zaragoza",
+    "metros": "95 m²",
+    "distribucion": "3 hab y salón.",
+    "banos": "2 baños",
+    "extras": "Terraza y Garaje",
+    "descripcion": "Espectacular ático con vistas despejadas y muchísima luz natural.",
+    "enlaceIdealista": "#"
+  }
+]
